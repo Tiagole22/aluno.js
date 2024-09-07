@@ -1,3 +1,7 @@
+import { LocalStorage } from 'node-localstorage';
+
+const localStorage = new LocalStorage('./scratch');
+
 function generateId(): string {
   return Date.now().toString();
 }
@@ -18,7 +22,6 @@ interface Item {
   categoria: string;
   comprado: boolean;
 }
-
 
 function adicionarItem(nome: string, quantidade: number, categoria: string): void {
   if (!nome || quantidade <= 0 || !categoria) {
